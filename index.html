@@ -1,0 +1,355 @@
+<title>BestBy Support &amp; Privacy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #f5f8fc;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --text: #101826;
+    --text-muted: #55647a;
+    --text-faint: #8592a8;
+    --accent: #2e7dff;
+    --accent-strong: #1f63e0;
+    --accent-soft: #e7f0ff;
+    --accent-warm: #ff8a3d;
+    --border: #dce4f0;
+    --shadow: 0 1px 2px rgba(16, 24, 38, 0.04), 0 8px 24px rgba(16, 24, 38, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #050b14;
+      --surface: #0d1622;
+      --surface-raised: #101c2b;
+      --text: #e7eefa;
+      --text-muted: #93a2bc;
+      --text-faint: #5e6d86;
+      --accent: #5fa0ff;
+      --accent-strong: #8bbaff;
+      --accent-soft: #12233f;
+      --accent-warm: #ff9a52;
+      --border: #1c2a3e;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #050b14;
+    --surface: #0d1622;
+    --surface-raised: #101c2b;
+    --text: #e7eefa;
+    --text-muted: #93a2bc;
+    --text-faint: #5e6d86;
+    --accent: #5fa0ff;
+    --accent-strong: #8bbaff;
+    --accent-soft: #12233f;
+    --accent-warm: #ff9a52;
+    --border: #1c2a3e;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+    text-wrap: balance;
+    color: var(--text);
+    margin: 0;
+  }
+
+  a { color: var(--accent-strong); text-decoration-color: var(--border); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: var(--accent-strong); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  /* Top bar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 24px;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand { display: flex; align-items: center; gap: 10px; }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: linear-gradient(160deg, var(--accent) 0%, var(--accent-strong) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .brand-mark svg { width: 16px; height: 16px; }
+
+  .brand-name {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+
+  .topnav { display: flex; gap: 4px; }
+
+  .topnav a {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .topnav a:hover { background: var(--accent-soft); color: var(--accent-strong); }
+
+  /* Page */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .eyebrow {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 10px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+  }
+
+  section.hero h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.015em; }
+  section.hero p.lede {
+    margin: 14px 0 0;
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 54ch;
+  }
+
+  section { margin-top: 64px; scroll-margin-top: 84px; }
+  section > h2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+
+  /* Support cards */
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .card p { margin: 0; color: var(--text-muted); font-size: 14.5px; }
+
+  .card a.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--accent-strong);
+  }
+
+  .card a.cta::after { content: "\2192"; transition: transform 0.15s ease; }
+  .card a.cta:hover::after { transform: translateX(3px); }
+
+  /* Policy prose */
+  .policy p, .policy li { color: var(--text-muted); font-size: 15.5px; }
+  .policy h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 28px 0 8px;
+  }
+  .policy h3:first-child { margin-top: 0; }
+  .policy ul { padding-left: 22px; margin: 8px 0; }
+  .policy li { margin: 4px 0; }
+  .policy strong { color: var(--text); }
+
+  .meta-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+  }
+
+  .meta-line .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-faint); }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 64px 0 0;
+  }
+
+  footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 24px 56px;
+    color: var(--text-faint);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--text-faint); }
+
+  @media (max-width: 520px) {
+    .topbar { padding: 12px 16px; }
+    .brand-name { font-size: 15px; }
+    .topnav a { padding: 6px 10px; font-size: 13px; }
+    main { padding: 40px 16px 72px; }
+    section.hero h1 { font-size: 27px; }
+  }
+</style>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 3.5C6 2.67 6.67 2 7.5 2H16C16.83 2 17.5 2.67 17.5 3.5V19.6C17.5 20.4 16.56 20.85 15.94 20.34L12.32 17.35C12.13 17.2 11.87 17.2 11.68 17.35L8.06 20.34C7.44 20.85 6.5 20.4 6.5 19.6V3.5Z" fill="white" fill-opacity="0.95"/>
+        <circle cx="14.2" cy="6.3" r="1.15" fill="#2e7dff"/>
+      </svg>
+    </div>
+    <span class="brand-name">BestBy</span>
+  </div>
+  <nav class="topnav">
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
+</div>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">BestBy for iOS</p>
+    <h1>Support &amp; Privacy</h1>
+    <p class="lede">Everything you need to get help with BestBy, and a plain-language account of what data the app collects and why.</p>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p style="color: var(--text-muted); margin: 0 0 4px; font-size: 15.5px;">Running into a bug, have a feature request, or just want to say hi? Reach out directly &mdash; BestBy is built and supported by one person, so you'll hear back from the developer, not a ticket queue.</p>
+
+    <div class="support-grid">
+      <div class="card">
+        <h3>Email support</h3>
+        <p>The fastest way to reach me. I read every message.</p>
+        <a class="cta" href="mailto:ezmans17@gmail.com">ezmans17@gmail.com</a>
+      </div>
+      <div class="card">
+        <h3>Notifications not showing?</h3>
+        <p>Check Settings &rarr; Notifications &rarr; BestBy is allowed, and that Notification Time in the app's own Settings tab is set the way you expect.</p>
+      </div>
+      <div class="card">
+        <h3>Missing a product or category?</h3>
+        <p>All your data lives only on your device. If it's not reinstalled after deleting the app, it can't be recovered &mdash; there's no cloud backup to restore from yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="privacy" class="policy">
+    <div class="meta-line">Privacy Policy <span class="dot"></span> Last updated September 28, 2026</div>
+    <h2 style="margin-bottom: 20px;">Privacy Policy</h2>
+
+    <h3>Overview</h3>
+    <p>BestBy is an expiration-date tracker made for personal use. This policy explains, in plain language, what data the app touches and why. There is no account, no sign-up, and no server that stores your products &mdash; the short version is that almost everything stays on your device.</p>
+
+    <h3>What stays on your device</h3>
+    <p>The products, categories, dates, and photos you add in BestBy are stored locally on your iPhone or iPad, using an on-device database. This data is never uploaded to a server, never seen by the developer, and is only ever used to power the app's own screens, reminders, and calendar view.</p>
+
+    <h3>Notifications</h3>
+    <p>Expiration reminders are scheduled and delivered entirely by iOS itself, based on the dates and lead time you set. No notification content is sent through any external service.</p>
+
+    <h3>Crash reports &amp; analytics</h3>
+    <p>BestBy uses Firebase Crashlytics and Firebase Analytics (provided by Google) to catch crashes and understand basic, aggregate usage &mdash; things like which screens are opened, and diagnostic data if the app crashes. This data:</p>
+    <ul>
+      <li>is tied to your device, not to your name, email, or any personal identity;</li>
+      <li>never includes the contents of your products, categories, or photos;</li>
+      <li>is used only to find and fix bugs, and to understand which parts of the app are actually used;</li>
+      <li>is never sold, and never shared with advertisers &mdash; BestBy has no ads and no third-party trackers beyond Firebase.</li>
+    </ul>
+    <p>Firebase's own handling of this data is described in <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google's Firebase privacy documentation</a>.</p>
+
+    <h3>Your choices</h3>
+    <p>You can turn off notification permission for BestBy at any time in iOS Settings. Uninstalling the app permanently deletes all locally stored product data, since nothing is backed up outside your device. There's no account to delete, because none is ever created.</p>
+
+    <h3>Data retention</h3>
+    <p>Your product data persists on-device for as long as you keep the app installed, or until you delete it yourself within the app. Crash and analytics data sent to Firebase is retained according to Google's standard Firebase retention periods, typically a small number of months.</p>
+
+    <h3>Your rights (EU/EEA users)</h3>
+    <p>If you're located in the EU or EEA, you have the right to request access to, correction of, or deletion of any personal data processed on Google's behalf via Firebase, and the right to object to that processing. Since BestBy stores your actual product data only on your own device, most of this data is already entirely within your control &mdash; deleting it in the app or uninstalling BestBy removes it. For anything related to Firebase's processing, you can also lodge a complaint with your local data protection authority.</p>
+
+    <h3>Children</h3>
+    <p>BestBy is not directed at children under 13, and does not knowingly collect personal data from them.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If this policy changes, the update will be posted on this page with a new "last updated" date above.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about this policy or your data can be sent to <a href="mailto:ezmans17@gmail.com">ezmans17@gmail.com</a>. The data controller for the purposes of this policy is Oleksandr Kovalenko.</p>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; 2026 Oleksandr Kovalenko</span>
+  <span><a href="mailto:ezmans17@gmail.com">ezmans17@gmail.com</a></span>
+</footer>
